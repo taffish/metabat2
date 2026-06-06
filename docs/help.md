@@ -1,11 +1,11 @@
-taf-metabat2 2.18-r1
+taf-metabat2 2.18-r2
 
 TAFFISH tool app for MetaBAT2, a metagenome binning toolkit for
 assembly FASTA files and optional BAM-derived coverage depth tables.
 The default upstream command is metabat2.
 
 Version notes:
-  TAFFISH package version: 2.18-r1
+  TAFFISH package version: 2.18-r2
   Exact upstream source label: 2.18-23-gc869c52
   Runtime banner reported by MetaBAT binaries: 2.17.89-gc869c52
   The runtime banner mismatch comes from upstream MetaBAT version metadata.

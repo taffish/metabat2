@@ -2,7 +2,7 @@
 name = "metabat2"
 kind = "tool"
 version = "2.18"
-release = 1
+release = 2
 license = "Apache-2.0"
 main = "src/main.taf"
 
@@ -17,7 +17,7 @@ pipe = true
 command_mode = true
 
 [container]
-image = "ghcr.io/taffish/metabat2:2.18-r1"
+image = "ghcr.io/taffish/metabat2:2.18-r2"
 dockerfile = "docker/Dockerfile"
 build_platforms = "linux/amd64,linux/arm64"
 
@@ -45,4 +45,4 @@ watch = "manual"
 backend = "docker"
 timeout = 240
 exist = ["metabat2", "metabat", "metabat1", "runMetaBat.sh", "jgi_summarize_bam_contig_depths", "contigOverlaps", "aggregateBinDepths.pl", "aggregateContigOverlapsByBin.pl", "merge_abundances.py", "filter_sam_by_min_len.py", "bash", "perl", "python3", "gzip"]
-test = ["metabat2 -h 2>&1 | grep -F 'version 2:2.17.89-gc869c52;' >/dev/null && metabat -h 2>&1 | grep -F 'version 2:2.17.89-gc869c52;' >/dev/null && metabat1 -h 2>&1 | grep -F 'version 1:2.17.89-gc869c52;' >/dev/null && jgi_summarize_bam_contig_depths -h 2>&1 | grep -F 'jgi_summarize_bam_contig_depths 2.17.89-gc869c52' >/dev/null && contigOverlaps -h 2>&1 | grep -F 'ContigOverlaps 2.17.89-gc869c52' >/dev/null", "runMetaBat.sh 2>&1 | grep -F 'runMetaBat.sh' >/dev/null && aggregateBinDepths.pl 2>&1 | grep -F 'depth.txt' >/dev/null && aggregateContigOverlapsByBin.pl 2>&1 | grep -F 'bin1.fa' >/dev/null && merge_abundances.py 2>&1 | grep -F 'Usage: merge_abundances.py' >/dev/null && filter_sam_by_min_len.py --help 2>&1 | grep -F 'Filters SAM' >/dev/null", "tmp=/tmp/taf-metabat2-workflow-$$; rm -rf \"$tmp\"; /opt/metabat2/share/testdata/metabat2_smoke.sh \"$tmp\" && test -s \"$tmp/depth.txt\" && test -s \"$tmp/direct_bin_depths.tsv\" && test -s \"$tmp/runmetabat.log\" && find \"$tmp/direct\" -type f -name '*.fa' | grep -q . && find \"$tmp/runmetabat\" -type f -name '*.fa' | grep -q . && rm -rf \"$tmp\""]
+test = ["metabat2 -h 2>&1 | grep -F 'version 2:2.17.89-gc869c52;' >/dev/null && metabat -h 2>&1 | grep -F 'version 2:2.17.89-gc869c52;' >/dev/null && metabat1 -h 2>&1 | grep -F 'version 1:2.17.89-gc869c52;' >/dev/null && jgi_summarize_bam_contig_depths -h 2>&1 | grep -F 'jgi_summarize_bam_contig_depths 2.17.89-gc869c52' >/dev/null && contigOverlaps -h 2>&1 | grep -F 'ContigOverlaps 2.17.89-gc869c52' >/dev/null", "runMetaBat.sh 2>&1 | grep -F 'runMetaBat.sh' >/dev/null && aggregateBinDepths.pl 2>&1 | grep -F 'depth.txt' >/dev/null && aggregateContigOverlapsByBin.pl 2>&1 | grep -F 'contigOverlaps.txt' >/dev/null && aggregateContigOverlapsByBin.pl 2>&1 | grep -F 'firstBinsContigNames.fofn' >/dev/null && merge_abundances.py 2>&1 | grep -F 'Usage: merge_abundances.py' >/dev/null && filter_sam_by_min_len.py --help 2>&1 | grep -F 'Filters SAM' >/dev/null", "tmp=/tmp/taf-metabat2-workflow-$$; rm -rf \"$tmp\"; /opt/metabat2/share/testdata/metabat2_smoke.sh \"$tmp\" && test -s \"$tmp/depth.txt\" && test -s \"$tmp/direct_bin_depths.tsv\" && test -s \"$tmp/runmetabat.log\" && find \"$tmp/direct\" -type f -name '*.fa' | grep -q . && find \"$tmp/runmetabat\" -type f -name '*.fa' | grep -q . && rm -rf \"$tmp\""]

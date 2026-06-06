@@ -8,9 +8,9 @@ coverage information.
 
 - name: `metabat2`
 - command: `taf-metabat2`
-- version: `2.18-r1`
+- version: `2.18-r2`
 - kind: `tool`
-- image: `ghcr.io/taffish/metabat2:2.18-r1`
+- image: `ghcr.io/taffish/metabat2:2.18-r2`
 - upstream project: MetaBAT
 - upstream source: Bitbucket commit `c869c524d0f131d60a03be64bd26b89738160652`
 - upstream distribution label: `2.18-23-gc869c52`
@@ -21,7 +21,7 @@ coverage information.
 
 ## Version Notes
 
-The TAFFISH package version intentionally stays simple: `2.18-r1`.
+The TAFFISH package version intentionally stays simple: `2.18-r2`.
 
 MetaBAT's current official Docker and Bioconda distributions are based on a
 post-`v2.18` commit and label that build as `2.18-23-gc869c52`. The upstream
@@ -48,7 +48,7 @@ taf install metabat2
 Install the exact release:
 
 ```sh
-taf install metabat2 2.18-r1
+taf install metabat2 2.18-r2
 ```
 
 For local testing before public publication:
